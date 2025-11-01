@@ -4,10 +4,10 @@
 #include "ABQ.hpp"
 #include "ABS.hpp"
 #include "Interfaces.hpp"
-#include "LinkedList.hpp"
 #include "LLDQ.hpp"
 #include "LLQ.hpp"
 #include "LLS.hpp"
+#include "LinkedList.hpp"
 #include <iostream>
 
 /*
@@ -19,10 +19,21 @@
 */
 
 int main() {
+    auto list = LinkedList<int>();
 
+    list.addHead(67);
+    list.addHead(420);
+    list.addHead(69);
+
+    auto copy = LinkedList<int>();
+    copy.addHead(1);
+
+    copy = list;
+
+    list.printForward();
+    copy.printForward();
 
     return 0;
 }
-
 
 #endif
