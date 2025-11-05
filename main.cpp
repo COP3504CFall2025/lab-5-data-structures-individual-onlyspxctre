@@ -19,21 +19,19 @@
 */
 
 int main() {
-    auto list = LinkedList<int>();
+    auto abs = ABS<int>();
 
-    list.addHead(67);
-    list.addHead(420);
-    list.addHead(69);
+    abs.push(5);
+    std::cout << abs.peek() << std::endl;
+    abs.push(10);
+    std::cout << abs.peek() << std::endl;
+    abs.push(15);
+    std::cout << abs.peek() << std::endl;
 
-    auto copy = LinkedList<int>();
-    copy.addHead(1);
-
-    copy = list;
-
-    list.printForward();
-    copy.printForward();
-
-    return 0;
+    const auto size = abs.getSize();
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << abs.pop() << std::endl;
+    }
 }
 
 #endif
