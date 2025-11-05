@@ -24,6 +24,7 @@ class ABQ : public QueueInterface<T>{
             data[i] = this->array_[this->index_ - this->curr_size_ + i];
         }
 
+        delete[] this->arrray_;
         this->array_ = data;
         this->index_ = this->curr_size_;
     }
