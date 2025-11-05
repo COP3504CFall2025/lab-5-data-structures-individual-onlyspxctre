@@ -12,7 +12,7 @@ private:
 public:
     // Constructor
     LLQ() {
-        list = LinkedList<T>();
+        this->list = LinkedList<T>();
     }
 
     // Insertion
@@ -36,7 +36,7 @@ public:
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list.getCount();
+        return this->list.getCount();
     }
 
 };

@@ -19,15 +19,24 @@
 */
 
 int main() {
-    auto llq = LLQ<int>();
+    auto lldq = LLDQ<int>();
 
-    llq.enqueue(1);
-    llq.enqueue(2);
-    llq.enqueue(3);
+    lldq.pushBack(1);
+    lldq.pushBack(2);
+    lldq.pushBack(3);
+    lldq.pushBack(4);
+    lldq.pushBack(5);
+    lldq.pushBack(6);
 
-    const auto size = llq.getSize();
+    const auto size = lldq.getSize();
+
     for (size_t i = 0; i < size; ++i) {
-        std::cout << llq.dequeue() << std::endl;
+        if (i < 3) {
+            std::cout << lldq.popBack() << std::endl;
+        }
+        else {
+            std::cout << lldq.popFront() << std::endl;
+        }
     }
 }
 

@@ -112,6 +112,7 @@ class LinkedList {
             this->tail = NULL;
         } else {
             this->head = next;
+            this->head->prev = nullptr;
         }
 
         this->count -= 1;
@@ -127,6 +128,7 @@ class LinkedList {
             this->tail = nullptr;
         } else {
             this->tail = prev;
+            this->tail->next = nullptr;
         }
 
         this->count -= 1;

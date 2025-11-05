@@ -36,6 +36,6 @@ public:
 
     //Getters
     std::size_t getSize() const noexcept override {
-        return list.getCount();
+        return this->list.getCount();
     }
 };
