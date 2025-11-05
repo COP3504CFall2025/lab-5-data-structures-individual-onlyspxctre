@@ -19,18 +19,18 @@
 */
 
 int main() {
-    auto abs = ABS<int>();
+    auto abq = ABQ<int>();
 
-    abs.push(5);
-    std::cout << abs.peek() << std::endl;
-    abs.push(10);
-    std::cout << abs.peek() << std::endl;
-    abs.push(15);
-    std::cout << abs.peek() << std::endl;
+    abq.enqueue(1);
+    abq.enqueue(2);
+    abq.enqueue(3);
+    abq.enqueue(4);
 
-    const auto size = abs.getSize();
+    std::cout << abq.getSize() << std::endl;
+
+    const auto size = abq.getSize();
     for (size_t i = 0; i < size; ++i) {
-        std::cout << abs.pop() << std::endl;
+        std::cout << abq.dequeue() << ", " << abq.getSize() << "remaining" << std::endl;
     }
 }
 
