@@ -193,10 +193,20 @@ class LinkedList {
         this->count = 0;
     }
     LinkedList(const LinkedList<T>& list) {
-        // TODO
+        Node<T>* other = list.head;
+
+        while (other != nullptr) {
+            this->addTail(other->data);
+        }
     }
     LinkedList(LinkedList<T>&& other) noexcept {
-        // TODO
+        this->head = other.head;
+        this->tail = other.tail;
+        this->count = other.count;
+
+        other.head = nullptr;
+        other.tail = nullptr;
+        other.count = 0;
     }
     ~LinkedList() {
         this->Clear();

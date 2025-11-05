@@ -19,18 +19,15 @@
 */
 
 int main() {
-    auto abq = ABQ<int>();
+    auto llq = LLQ<int>();
 
-    abq.enqueue(1);
-    abq.enqueue(2);
-    abq.enqueue(3);
-    abq.enqueue(4);
+    llq.enqueue(1);
+    llq.enqueue(2);
+    llq.enqueue(3);
 
-    std::cout << abq.getSize() << std::endl;
-
-    const auto size = abq.getSize();
+    const auto size = llq.getSize();
     for (size_t i = 0; i < size; ++i) {
-        std::cout << abq.dequeue() << ", " << abq.getSize() << "remaining" << std::endl;
+        std::cout << llq.dequeue() << std::endl;
     }
 }
 
