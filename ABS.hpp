@@ -92,6 +92,9 @@ public:
 
     // Push item onto the stack
     void push(const T& data) override {
+        if (this->curr_size_ == this->capacity_) {
+            this->realloc(this->capacity_ << 1);
+        }
         this->array_[this->curr_size_] = data;
         this->curr_size_ += 1;
     }

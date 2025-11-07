@@ -66,6 +66,8 @@ public:
         for (size_t i = 0; i < this->capacity_; ++i) {
             this->array_[i] = rhs.array_[i];
         }
+
+        return *this;
     }
     ABQ(ABQ&& other) noexcept {
         this->capacity_ = other.capacity_;
@@ -90,6 +92,8 @@ public:
         rhs.index_ = 0;
         rhs.curr_size_ = 0;
         rhs.array_ = nullptr;
+
+        return *this;
     }
     ~ABQ() noexcept override {
         delete[] this->array_;
@@ -124,11 +128,17 @@ public:
 
     // Access
     T peek() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABQ is empty");
+        }
         return this->array_[this->index_ - this->curr_size_];
     }
 
     // Deletion
     T dequeue() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABQ is empty");
+        }
         this->curr_size_ -= 1;
         return this->array_[this->index_ - this->curr_size_ - 1];
     }

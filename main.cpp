@@ -21,6 +21,12 @@ int main() {
     auto llq = LLQ<int>();
     auto abdq = ABDQ<int>();
     auto lldq = LLDQ<int>();
+
+    abs.push(1);
+    abs.push(2);
+    std::cout << abs.getMaxCapacity() << std::endl;
+    abs.push(2);
+    std::cout << abs.getMaxCapacity() << std::endl;
     return 0;
 }
 #endif
