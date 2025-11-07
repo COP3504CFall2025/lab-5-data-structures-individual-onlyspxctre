@@ -25,15 +25,19 @@ int main() {
     abdq.pushBack(1);
     abdq.pushBack(2);
     abdq.pushFront(3);
+    abdq.pushFront(4);
+
+    abdq.pushBack(5);
 
     auto copy = abdq;
 
-    std::cout << "Back: " << copy.front() << std::endl;
-    std::cout << copy.getMaxCapacity() << std::endl;
+    std::cout << "Front: " << copy.front() << std::endl;
 
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popFront() << std::endl;
+    std::cout << copy.popFront() << std::endl;
+    std::cout << copy.popFront() << std::endl;
+    std::cout << copy.popFront() << std::endl;
+    std::cout << copy.popFront() << std::endl;
     return 0;
 }
 #endif

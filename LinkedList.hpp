@@ -31,7 +31,7 @@ class LinkedList {
         std::cout << " }" << std::endl;
     }
 
-    void printReverse() const {
+    void PrintReverse() const {
         Node<T>* curr = this->tail;
         Node<T>* prev;
 
