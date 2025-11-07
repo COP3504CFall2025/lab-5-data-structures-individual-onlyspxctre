@@ -71,7 +71,7 @@ class LLDQ : public DequeInterface<T> {
         if (this->getSize() == 0) {
             throw std::runtime_error("LLDQ is empty");
         }
-        return this->list.getTail()->data;
+        return this->list.getHead()->data;
     }
     const T& back() const override {
         if (this->getSize() == 0) {

@@ -28,8 +28,10 @@ int main() {
     lldq.pushFront(4);
     lldq.pushBack(5);
 
-    auto copy = lldq;
+    auto copy = std::move(lldq);
 
+    std::cout << "Front: " << copy.front() << std::endl;
+    std::cout << "Back: " << copy.back() << std::endl;
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
