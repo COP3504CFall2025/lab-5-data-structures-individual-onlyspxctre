@@ -14,7 +14,7 @@ template <typename T>
 class LinkedList {
   public:
     // Behaviors
-    void PrintForward() const {
+    void printForward() const {
         Node<T>* curr = this->head;
         Node<T>* next;
 
@@ -31,7 +31,7 @@ class LinkedList {
         std::cout << " }" << std::endl;
     }
 
-    void PrintReverse() const {
+    void printReverse() const {
         Node<T>* curr = this->tail;
         Node<T>* prev;
 

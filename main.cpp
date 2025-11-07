@@ -28,7 +28,7 @@ int main() {
 
     auto copy = abdq;
 
-    std::cout << "Back: " << copy.back() << std::endl;
+    std::cout << "Back: " << copy.front() << std::endl;
     std::cout << copy.getMaxCapacity() << std::endl;
 
     std::cout << copy.popBack() << std::endl;
