@@ -22,15 +22,18 @@ int main() {
     auto abdq = ABDQ<int>();
     auto lldq = LLDQ<int>();
 
-    abs.push(1);
-    abs.push(2);
-    abs.push(3);
-    auto new_abs = abs;
+    abdq.pushBack(1);
+    abdq.pushBack(2);
+    abdq.pushFront(3);
 
-    std::cout << abs.pop() << std::endl;
-    std::cout << abs.pop() << std::endl;
-    std::cout << abs.pop() << std::endl;
+    auto copy = abdq;
 
+    std::cout << "Back: " << copy.back() << std::endl;
+    std::cout << copy.getMaxCapacity() << std::endl;
+
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
     return 0;
 }
 #endif

@@ -171,17 +171,21 @@ class ABDQ : public DequeInterface<T> {
         if (this->getSize() == 0) {
             throw std::runtime_error("ABDQ is empty");
         }
-        return this->data_[this->front_];
+        return this->data_[this->front_ + 1];
     }
     const T& back() const override {
         if (this->getSize() == 0) {
             throw std::runtime_error("ABDQ is empty");
         }
-        return this->data_[this->back_];
+        return this->data_[this->back_ - 1];
     }
 
     // Getters
     std::size_t getSize() const noexcept override {
         return this->size_;
+    }
+
+    std::size_t getMaxCapacity() const noexcept {
+        return this->capacity_;
     }
 };
