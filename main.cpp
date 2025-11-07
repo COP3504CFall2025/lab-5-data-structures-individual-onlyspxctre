@@ -3,10 +3,10 @@
 #include "ABQ.hpp"
 #include "ABS.hpp"
 #include "Interfaces.hpp"
-#include "LinkedList.hpp"
 #include "LLDQ.hpp"
 #include "LLQ.hpp"
 #include "LLS.hpp"
+#include "LinkedList.hpp"
 #include <iostream>
 /*
     - LEAVE THE IFDEF GUARDS TO KEEP YOUR MAIN WITHOUT CONFLICTING WITH GRADESCOPE!
@@ -15,28 +15,16 @@
     main function can compile.
 */
 int main() {
-    auto abs = ABS<int>();
-    auto abq = ABQ<int>();
-    auto lls = LLS<int>();
-    auto llq = LLQ<int>();
-    auto abdq = ABDQ<int>();
-    auto lldq = LLDQ<int>();
+    auto list = LinkedList<int>();
 
-    lldq.pushBack(1);
-    lldq.pushBack(2);
-    lldq.pushFront(3);
-    lldq.pushFront(4);
-    lldq.pushBack(5);
+    list.AddTail(1);
+    list.AddTail(2);
+    list.AddTail(3);
+    list.AddTail(4);
 
-    auto copy = std::move(lldq);
+    auto copy = list;
 
-    std::cout << "Front: " << copy.front() << std::endl;
-    std::cout << "Back: " << copy.back() << std::endl;
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
-    std::cout << copy.popBack() << std::endl;
+    list.printForward();
 
     return 0;
 }

@@ -70,15 +70,12 @@ class LinkedList {
     // Insertion
     void AddHead(const T& data) {
         Node<T>* newHead = new Node<T>;
-        if (!this->head) {
+        newHead->data = data;
+        if (this->head == nullptr) {
             this->head = newHead;
-            this->head->data = data;
-
             this->tail = this->head;
         } else {
-            newHead->data = data;
             newHead->next = this->head;
-
             this->head->prev = newHead;
             this->head = newHead;
         }
@@ -87,13 +84,11 @@ class LinkedList {
     }
     void AddTail(const T& data) {
         Node<T>* newTail = new Node<T>;
-        if (!tail) {
+        newTail->data = data;
+        if (this->tail == nullptr) {
             this->tail = newTail;
-            this->tail->data = data;
-
             this->head = this->tail;
         } else {
-            newTail->data = data;
             newTail->prev = this->tail;
             this->tail->next = newTail;
             this->tail = newTail;
@@ -201,11 +196,12 @@ class LinkedList {
         this->tail = nullptr;
         this->count = 0;
     }
-    LinkedList(const LinkedList<T>& list) {
+    LinkedList(const LinkedList<T>& list) : LinkedList() {
         Node<T>* other = list.head;
 
         while (other != nullptr) {
             this->AddTail(other->data);
+            other = other->next;
         }
     }
     LinkedList(LinkedList<T>&& other) noexcept {
