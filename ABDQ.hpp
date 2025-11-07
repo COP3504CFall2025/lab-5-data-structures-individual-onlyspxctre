@@ -182,7 +182,7 @@ class ABDQ : public DequeInterface<T> {
             throw std::runtime_error("ABDQ is empty");
         }
 
-        size_t index = this->back_ + 1;
+        size_t index = this->back_ - 1;
         if (index >= this->capacity_) index -= this->capacity_;
 
         return this->data_[index];

@@ -31,13 +31,13 @@ int main() {
 
     auto copy = abdq;
 
-    std::cout << "Front: " << copy.front() << std::endl;
+    std::cout << "Back: " << copy.back() << std::endl;
 
-    std::cout << copy.popFront() << std::endl;
-    std::cout << copy.popFront() << std::endl;
-    std::cout << copy.popFront() << std::endl;
-    std::cout << copy.popFront() << std::endl;
-    std::cout << copy.popFront() << std::endl;
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
+    std::cout << copy.popBack() << std::endl;
     return 0;
 }
 #endif
