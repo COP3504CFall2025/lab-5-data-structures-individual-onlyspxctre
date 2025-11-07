@@ -96,10 +96,13 @@ public:
     }
 
     T peek() const override {
+        if (this->getSize() == 0) throw std::out_of_range("ABS is empty\n");
         return this->array_[this->curr_size_ - 1];
     }
 
     T pop() override {
+        if (this->getSize() == 0) throw std::out_of_range("ABS is empty\n");
+
         this->curr_size_ -= 1;
         return this->array_[this->curr_size_];
     }

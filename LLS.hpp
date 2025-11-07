@@ -23,6 +23,7 @@ public:
 
     // Deletion
     T pop() override {
+        if (this->getSize() == 0) throw std::out_of_range("LLS is empty\n");
         T data = this->list.getTail()->data;
         this->list.RemoveTail();
 
@@ -31,6 +32,7 @@ public:
 
     // Access
     T peek() const override {
+        if (this->getSize() == 0) throw std::out_of_range("LLS is empty\n");
         return this->list.getTail()->data;
     }
 
