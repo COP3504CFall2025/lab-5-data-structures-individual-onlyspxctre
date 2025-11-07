@@ -92,6 +92,8 @@ class ABDQ : public DequeInterface<T> {
         for (size_t i = 0; i < this->capacity_; ++i) {
             this->data_[i] = other.data_[i];
         }
+
+        return *this;
     }
     ABDQ& operator=(ABDQ&& other) noexcept {
         delete[] this->data_;
@@ -107,6 +109,8 @@ class ABDQ : public DequeInterface<T> {
         other.front_ = 0;
         other.back_ = 0;
         other.data_ = nullptr;
+
+        return *this;
     }
     ~ABDQ() override {
         delete[] this->data_;
