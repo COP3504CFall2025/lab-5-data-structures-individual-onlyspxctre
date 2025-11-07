@@ -16,6 +16,26 @@ class LLDQ : public DequeInterface<T> {
         this->list = LinkedList<T>();
     }
 
+    LLDQ(const LLDQ<T>& other) {
+        this->list = other.list;
+    }
+
+    LLDQ(LLDQ<T>&& other) noexcept {
+        this->list = std::move(other.list);
+    }
+
+    LLDQ<T>& operator=(const LLDQ<T>& rhs) {
+        this->list.Clear();
+        this->list = rhs.list;
+        return *this;
+    }
+
+    LLDQ<T>& operator=(LLDQ<T>&& rhs) noexcept {
+        this->list.Clear();
+        this->list = std::move(rhs.list);
+        return *this;
+    }
+
     // Core Insertion Operations
     void pushFront(const T& item) override {
         this->list.AddHead(item);

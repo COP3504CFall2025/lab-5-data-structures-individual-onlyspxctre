@@ -104,6 +104,10 @@ class LinkedList {
 
     // Removal
     bool RemoveHead() {
+        if (this->count == 0) {
+            return false;
+        }
+
         Node<T>* next = this->head->next;
         delete this->head;
 
@@ -120,6 +124,10 @@ class LinkedList {
         return true;
     }
     bool RemoveTail() {
+        if (this->count == 0) {
+            return false;
+        }
+
         Node<T>* prev = this->tail->prev;
         delete this->tail;
 
@@ -172,7 +180,6 @@ class LinkedList {
         auto curr = rhs.getHead();
 
         while (curr) {
-            std::cout << curr->data << std::endl;
             try {
                 list.AddTail(curr->data);
             } catch (std::bad_alloc& e) {

@@ -22,22 +22,20 @@ int main() {
     auto abdq = ABDQ<int>();
     auto lldq = LLDQ<int>();
 
-    abdq.pushBack(1);
-    abdq.pushBack(2);
-    abdq.pushFront(3);
-    abdq.pushFront(4);
+    lldq.pushBack(1);
+    lldq.pushBack(2);
+    lldq.pushFront(3);
+    lldq.pushFront(4);
+    lldq.pushBack(5);
 
-    abdq.pushBack(5);
-
-    auto copy = abdq;
-
-    std::cout << "Back: " << copy.back() << std::endl;
+    auto copy = lldq;
 
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
     std::cout << copy.popBack() << std::endl;
+
     return 0;
 }
 #endif
