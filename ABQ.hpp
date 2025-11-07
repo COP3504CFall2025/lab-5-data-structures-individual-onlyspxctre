@@ -140,6 +140,10 @@ public:
             throw std::runtime_error("ABQ is empty");
         }
         this->curr_size_ -= 1;
+
+        if (this->curr_size_ <= this->capacity_ / 4) {
+            realloc(this->capacity_ >> 1);
+        }
         return this->array_[this->index_ - this->curr_size_ - 1];
     }
 
