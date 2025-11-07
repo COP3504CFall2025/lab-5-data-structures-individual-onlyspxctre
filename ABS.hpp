@@ -111,6 +111,10 @@ public:
             throw std::runtime_error("ABS is empty");
         }
         this->curr_size_ -= 1;
+
+        if (this->curr_size <= this->capacity_ / 4) {
+            this->realloc(this->capacity_ >> 1);
+        }
         return this->array_[this->curr_size_];
     }
 
