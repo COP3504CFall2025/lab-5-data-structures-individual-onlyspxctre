@@ -24,8 +24,7 @@ public:
     // Deletion
     T pop() override {
         if (this->getSize() == 0) {
-            std::cerr << "LLS is empty" << std::endl;
-            return NULL;
+            throw std::runtime_error("LLS is empty");
         }
         T data = this->list.getTail()->data;
         this->list.RemoveTail();
@@ -36,8 +35,7 @@ public:
     // Access
     T peek() const override {
         if (this->getSize() == 0) {
-            std::cerr << "LLS is empty" << std::endl;
-            return NULL;
+            throw std::runtime_error("LLS is empty");
         }
         return this->list.getTail()->data;
     }

@@ -98,16 +98,14 @@ public:
 
     T peek() const override {
         if (this->getSize() == 0) {
-            std::cerr << "ABS is empty" << std::endl;
-            return NULL;
+            throw std::runtime_error("ABS is empty");
         }
         return this->array_[this->curr_size_ - 1];
     }
 
     T pop() override {
         if (this->getSize() == 0) {
-            std::cerr << "ABS is empty" << std::endl;
-            return NULL;
+            throw std::runtime_error("ABS is empty");
         }
         this->curr_size_ -= 1;
         return this->array_[this->curr_size_];
