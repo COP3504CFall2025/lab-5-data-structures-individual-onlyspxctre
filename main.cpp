@@ -22,14 +22,15 @@ int main() {
     auto abdq = ABDQ<int>();
     auto lldq = LLDQ<int>();
 
-    abq.enqueue(1);
-    abq.enqueue(2);
-    abq.enqueue(3);
+    abs.push(1);
+    abs.push(2);
+    abs.push(3);
+    auto new_abs = abs;
 
-    std::cout << abq.dequeue() << std::endl;
-    std::cout << abq.dequeue() << std::endl;
-    std::cout << abq.dequeue() << std::endl;
-    std::cout << abq.dequeue() << std::endl;
+    std::cout << abs.pop() << std::endl;
+    std::cout << abs.pop() << std::endl;
+    std::cout << abs.pop() << std::endl;
+
     return 0;
 }
 #endif

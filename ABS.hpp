@@ -28,7 +28,7 @@ public:
         this->array_ = new T[this->capacity_];
 
         for (size_t i = 0; i < this->capacity_; ++i) {
-            this->array_[i] = other.array_;
+            this->array_[i] = other.array_[i];
         }
     }
     ABS& operator=(const ABS& rhs) {
@@ -110,12 +110,15 @@ public:
         if (this->getSize() == 0) {
             throw std::runtime_error("ABS is empty");
         }
+
+        T data = this->array_[this->curr_size_ - 1];
+
         this->curr_size_ -= 1;
 
         if (this->curr_size_ <= this->capacity_ / 4) {
             this->realloc(this->capacity_ >> 1);
         }
-        return this->array_[this->curr_size_];
+        return data;
     }
 
 private:
