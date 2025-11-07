@@ -15,6 +15,12 @@
     main function can compile.
 */
 int main() {
+    auto abs = ABS<int>();
+    auto abq = ABQ<int>();
+    auto lls = LLS<int>();
+    auto llq = LLQ<int>();
+    auto abdq = ABDQ<int>();
+    auto lldq = LLDQ<int>();
     return 0;
 }
 #endif

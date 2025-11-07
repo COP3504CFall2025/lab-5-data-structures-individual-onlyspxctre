@@ -17,14 +17,14 @@ public:
 
     // Insertion
     void enqueue(const T& item) override {
-        this->list.addTail(item);
+        this->list.AddTail(item);
     }
 
     // Deletion
     T dequeue() override {
         T data = this->list.getHead()->data;
 
-        this->list.removeHead();
+        this->list.RemoveHead();
 
         return data;
     }

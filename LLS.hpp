@@ -18,13 +18,13 @@ public:
 
     // Insertion
     void push(const T& item) override {
-        this->list.addTail(item);
+        this->list.AddTail(item);
     }
 
     // Deletion
     T pop() override {
         T data = this->list.getTail()->data;
-        this->list.removeTail();
+        this->list.RemoveTail();
 
         return data;
     }
