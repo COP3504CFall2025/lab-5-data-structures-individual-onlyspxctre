@@ -139,12 +139,15 @@ public:
         if (this->getSize() == 0) {
             throw std::runtime_error("ABQ is empty");
         }
-        this->curr_size_ -= 1;
 
+        T data = this->array_[this->index_ - this->curr_size_];
+
+        this->curr_size_ -= 1;
         if (this->curr_size_ <= this->capacity_ / 4) {
             this->realloc(this->capacity_ >> 1);
         }
-        return this->array_[this->index_ - this->curr_size_];
+
+        return data;
     }
 
 };

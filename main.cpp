@@ -22,11 +22,14 @@ int main() {
     auto abdq = ABDQ<int>();
     auto lldq = LLDQ<int>();
 
-    abs.push(1);
-    abs.push(2);
-    std::cout << abs.getMaxCapacity() << std::endl;
-    abs.push(2);
-    std::cout << abs.getMaxCapacity() << std::endl;
+    abq.enqueue(1);
+    abq.enqueue(2);
+    abq.enqueue(3);
+
+    std::cout << abq.dequeue() << std::endl;
+    std::cout << abq.dequeue() << std::endl;
+    std::cout << abq.dequeue() << std::endl;
+    std::cout << abq.dequeue() << std::endl;
     return 0;
 }
 #endif
