@@ -14,7 +14,7 @@ template <typename T>
 class LinkedList {
   public:
     // Behaviors
-    void printForward() const {
+    void PrintForward() const {
         Node<T>* curr = this->head;
         Node<T>* next;
 
@@ -31,7 +31,7 @@ class LinkedList {
         std::cout << " }" << std::endl;
     }
 
-    void printReverse() const {
+    void PrintReverse() const {
         Node<T>* curr = this->tail;
         Node<T>* prev;
 
@@ -68,7 +68,7 @@ class LinkedList {
     }
 
     // Insertion
-    void addHead(const T& data) {
+    void AddHead(const T& data) {
         Node<T>* newHead = new Node<T>;
         if (!this->head) {
             this->head = newHead;
@@ -85,7 +85,7 @@ class LinkedList {
 
         this->count += 1;
     }
-    void addTail(const T& data) {
+    void AddTail(const T& data) {
         Node<T>* newTail = new Node<T>;
         if (!tail) {
             this->tail = newTail;
@@ -103,7 +103,7 @@ class LinkedList {
     }
 
     // Removal
-    bool removeHead() {
+    bool RemoveHead() {
         Node<T>* next = this->head->next;
         delete this->head;
 
@@ -119,7 +119,7 @@ class LinkedList {
 
         return true;
     }
-    bool removeTail() {
+    bool RemoveTail() {
         Node<T>* prev = this->tail->prev;
         delete this->tail;
 
@@ -174,7 +174,7 @@ class LinkedList {
         while (curr) {
             std::cout << curr->data << std::endl;
             try {
-                list.addTail(curr->data);
+                list.AddTail(curr->data);
             } catch (std::bad_alloc& e) {
                 std::cerr << "Failed to copy linked list: " << e.what() << std::endl;
                 return *this;
@@ -198,7 +198,7 @@ class LinkedList {
         Node<T>* other = list.head;
 
         while (other != nullptr) {
-            this->addTail(other->data);
+            this->AddTail(other->data);
         }
     }
     LinkedList(LinkedList<T>&& other) noexcept {
