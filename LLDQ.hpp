@@ -1,15 +1,16 @@
 #pragma once
 
-#include <cstddef>
 #include "Interfaces.hpp"
 #include "LinkedList.hpp"
+#include <cstddef>
+#include <stdexcept>
 
 template <typename T>
 class LLDQ : public DequeInterface<T> {
-private:
+  private:
     LinkedList<T> list;
 
-public:
+  public:
     // Constructor
     LLDQ() {
         this->list = LinkedList<T>();
@@ -25,6 +26,9 @@ public:
 
     // Core Removal Operations
     T popFront() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLDQ is empty");
+        }
         T data = this->list.getHead()->data;
 
         list.RemoveHead();
@@ -32,6 +36,9 @@ public:
         return data;
     }
     T popBack() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLDQ is empty");
+        }
         T data = this->list.getTail()->data;
 
         list.RemoveTail();
@@ -41,9 +48,15 @@ public:
 
     // Element Accessors
     const T& front() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLDQ is empty");
+        }
         return this->list.getTail()->data;
     }
     const T& back() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLDQ is empty");
+        }
         return this->list.getTail()->data;
     }
 

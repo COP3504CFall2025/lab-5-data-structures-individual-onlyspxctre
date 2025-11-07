@@ -22,6 +22,9 @@ public:
 
     // Deletion
     T dequeue() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLQ is empty");
+        }
         T data = this->list.getHead()->data;
 
         this->list.RemoveHead();
@@ -31,6 +34,9 @@ public:
 
     // Access
     T peek() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("LLQ is empty");
+        }
         return this->list.getHead()->data;
     }
 

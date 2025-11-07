@@ -55,7 +55,7 @@ public:
         other.array_ = nullptr;
     }
     ABS& operator=(ABS&& rhs) noexcept {
-        delete this->array_;
+        delete[] this->array_;
 
         this->curr_size_ = rhs.curr_size_;
         this->capacity_ = rhs.capacity_;

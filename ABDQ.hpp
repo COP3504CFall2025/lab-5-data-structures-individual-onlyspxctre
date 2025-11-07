@@ -140,6 +140,9 @@ class ABDQ : public DequeInterface<T> {
 
     // Deletion
     T popFront() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABDQ is empty");
+        }
         this->front_ = this->front_ == this->capacity_ - 1 ? 0 : this->front_ + 1;
         this->size_ -= 1;
 
@@ -148,6 +151,9 @@ class ABDQ : public DequeInterface<T> {
         return data;
     }
     T popBack() override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABDQ is empty");
+        }
         this->back_ = this->back_ == 0 ? this->capacity_ - 1 : this->back_ - 1;
         this->size_ -= 1;
 
@@ -158,9 +164,15 @@ class ABDQ : public DequeInterface<T> {
 
     // Access
     const T& front() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABDQ is empty");
+        }
         return this->data_[this->front_];
     }
     const T& back() const override {
+        if (this->getSize() == 0) {
+            throw std::runtime_error("ABDQ is empty");
+        }
         return this->data_[this->back_];
     }
 
