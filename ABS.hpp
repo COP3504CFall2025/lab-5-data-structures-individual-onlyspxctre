@@ -91,27 +91,15 @@ public:
 
     // Push item onto the stack
     void push(const T& data) override {
-        if (this->curr_size_ == this->capacity_) {
-            realloc(this->capacity_ << 1);
-        }
-
         this->array_[this->curr_size_] = data;
         this->curr_size_ += 1;
     }
 
     T peek() const override {
-        if (this->curr_size_ == 0) {
-            throw std::out_of_range("ABS is empty\n");
-        }
-
         return this->array_[this->curr_size_ - 1];
     }
 
     T pop() override {
-        if (this->curr_size_ == 0) {
-            throw std::out_of_range("ABS is empty\n");
-        }
-
         this->curr_size_ -= 1;
         return this->array_[this->curr_size_];
     }

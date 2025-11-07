@@ -158,17 +158,9 @@ class ABDQ : public DequeInterface<T> {
 
     // Access
     const T& front() const override {
-        if (this->size_ == 0) {
-            throw std::out_of_range("ABDQ is empty\n");
-        }
-
         return this->data_[this->front_];
     }
     const T& back() const override {
-        if (this->size_ == 0) {
-            throw std::out_of_range("ABDQ is empty\n");
-        }
-
         return this->data_[this->back_];
     }
 
